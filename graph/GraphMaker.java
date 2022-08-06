@@ -72,4 +72,87 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/0e13d9c0-243f-44e9-9986-5dfe8622f156/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220806T125406Z&X-Amz-Expires=86400&X-Amz-Signature=f556a196f81b66780abd499a506069de9f921c148094e5a4824b782fa5065d2e&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeCyclicNonDirectedGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for(int i = 0; i <= 11; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 4
+        adj.get(2).add(4);
+        adj.get(4).add(2);
+
+        // 3 -- 5
+        adj.get(3).add(5);
+        adj.get(5).add(3);
+
+        // 5 -- 6
+        adj.get(5).add(6);
+        adj.get(6).add(5);
+
+        // 6 -- 7
+        adj.get(6).add(7);
+        adj.get(7).add(6);
+
+        // 7 -- 8
+        adj.get(7).add(8);
+        adj.get(8).add(7);
+
+        // 8 -- 11
+        adj.get(8).add(11);
+        adj.get(11).add(8);
+
+        // 8 -- 9
+        adj.get(8).add(9);
+        adj.get(9).add(8);
+
+        // 9 -- 10
+        adj.get(9).add(10);
+        adj.get(10).add(9);
+
+        // 10 -- 5
+        adj.get(10).add(5);
+        adj.get(5).add(10);
+
+        return adj;
+    }
+
+    public static ArrayList<ArrayList<Integer>> makeAcyclicNonDirectedGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for(int i = 0; i <= 11; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 4
+        adj.get(2).add(4);
+        adj.get(4).add(2);
+
+        // 3 -- 5
+        adj.get(3).add(5);
+        adj.get(5).add(3);
+
+        // 5 -- 6
+        adj.get(5).add(6);
+        adj.get(6).add(5);
+
+        // 6 -- 7
+        adj.get(6).add(7);
+        adj.get(7).add(6);
+
+        // 10 -- 5
+        adj.get(10).add(5);
+        adj.get(5).add(10);
+
+        return adj;
+    }
 }
