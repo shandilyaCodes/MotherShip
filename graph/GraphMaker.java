@@ -326,4 +326,33 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6ffe8f89-ed4b-422f-a100-f9109a717a15/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220807%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220807T183647Z&X-Amz-Expires=86400&X-Amz-Signature=02487637149403cbe19f81e6d3e36ab9fd73bd861c6024ac8de8398fd3dba2de&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeTopologicalDAG() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 5 -> 0
+        adj.get(5).add(0);
+
+        // 4 -> 0
+        adj.get(4).add(0);
+
+        // 4 -> 1
+        adj.get(4).add(1);
+
+        // 3 -> 1
+        adj.get(3).add(1);
+
+        // 2 -> 3
+        adj.get(2).add(3);
+
+        // 5 -> 2
+        adj.get(5).add(2);
+
+        return adj;
+    }
 }
