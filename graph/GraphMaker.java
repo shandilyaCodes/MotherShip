@@ -155,4 +155,122 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/91c563ba-0786-41d8-bca8-b9439a6bf64e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220807%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220807T112610Z&X-Amz-Expires=86400&X-Amz-Signature=4a331087bc9c05ad4eb1158a1aca76a2927907a72f0c67bee87c89cbab0bacf1&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeNonOddLengthCycleBipartiteGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i <= 10; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 3
+        adj.get(2).add(3);
+        adj.get(3).add(2);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        // 4 -- 5
+        adj.get(4).add(5);
+        adj.get(5).add(4);
+
+        // 5 -- 6
+        adj.get(5).add(6);
+        adj.get(6).add(5);
+
+        // 6 -- 9
+        adj.get(6).add(9);
+        adj.get(9).add(6);
+
+        // 9 -- 10
+        adj.get(9).add(10);
+        adj.get(10).add(9);
+
+        // 6 -- 7
+        adj.get(6).add(7);
+        adj.get(7).add(6);
+
+        // 7 -- 8
+        adj.get(7).add(8);
+        adj.get(8).add(7);
+
+        // 8 -- 3
+        adj.get(8).add(3);
+        adj.get(3).add(8);
+
+        return adj;
+    }
+
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/604834b0-e300-45f5-add4-060d5c63a06d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220807%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220807T112700Z&X-Amz-Expires=86400&X-Amz-Signature=c375bd58c11a5e22c404a4bbc1ac3fc020668a84da2ae18e8a29d78debfabcc6&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeOddLengthCycleNonBipartiteGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i <= 8; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 3
+        adj.get(2).add(3);
+        adj.get(3).add(2);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        // 4 -- 7
+        adj.get(4).add(7);
+        adj.get(7).add(4);
+
+        // 7 -- 8
+        adj.get(7).add(8);
+        adj.get(8).add(7);
+
+        // 4 -- 5
+        adj.get(4).add(5);
+        adj.get(5).add(4);
+
+        // 5 -- 6
+        adj.get(5).add(6);
+        adj.get(6).add(5);
+
+        // 6 -- 2
+        adj.get(6).add(2);
+        adj.get(2).add(6);
+
+        return adj;
+    }
+
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6fe549b1-153a-4d94-ae55-f8823b96511b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220807%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220807T112748Z&X-Amz-Expires=86400&X-Amz-Signature=dc9aa0f3d2ded7dd66b6255df442534b9774699d9bd063b962908753bc55e7e8&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeNoCycleBipartiteGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0 ; i <= 5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 3
+        adj.get(2).add(3);
+        adj.get(3).add(2);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        // 4 -- 5
+        adj.get(4).add(5);
+        adj.get(5).add(4);
+
+        return adj;
+    }
 }
