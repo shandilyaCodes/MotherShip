@@ -273,4 +273,57 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/3ef4c796-017d-46fc-9dae-167655750d2e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220807%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220807T180312Z&X-Amz-Expires=86400&X-Amz-Signature=589d43df06a3393e867ea01d48631a83100230166124c81cd7ef7a1f24bafba2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeCyclicDAG() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i <= 9; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -> 2
+        adj.get(1).add(2);
+
+        // 2 -> 3
+        adj.get(2).add(3);
+
+        // 3 -> 4
+        adj.get(3).add(4);
+
+        // 4 -> 5
+        adj.get(4).add(5);
+
+        // 3 -> 6
+        adj.get(3).add(6);
+
+        // 6 -> 5
+        adj.get(6).add(5);
+
+        // 7 -> 2
+        adj.get(7).add(2);
+
+        // 7 -> 8
+        adj.get(7).add(8);
+
+        // 8 -> 9
+        adj.get(8).add(9);
+
+        // 9 -> 7
+        adj.get(9).add(7);
+
+        return adj;
+    }
+
+    public static ArrayList<ArrayList<Integer>> makeAcyclicDAG() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i <= 2; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -> 2
+        adj.get(1).add(2);
+
+        return adj;
+    }
 }
