@@ -410,4 +410,37 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6895d43e-1fe3-4ad4-9ffc-c95d21d1f4d7/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220808T143626Z&X-Amz-Expires=86400&X-Amz-Signature=df2ee9c91bce33692239747e3156c29fd8454cce319f0469d7dc3c475af58d7a&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<GraphNode>> makeWeightedDAG() {
+        // v : 6
+        ArrayList<ArrayList<GraphNode>> adj = new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1 -- 2
+        adj.get(0).add(new GraphNode(1, 2));
+
+        // 1 -- 2 -- 3
+        adj.get(1).add(new GraphNode(2, 3));
+
+        // 2 -- 3 -- 6
+        adj.get(2).add(new GraphNode(3, 6));
+
+        // 0 -- 4 -- 1
+        adj.get(0).add(new GraphNode(4, 1));
+
+        // 4 -- 2 -- 2
+        adj.get(4).add(new GraphNode(2, 2));
+
+        // 4 -- 5 -- 4
+        adj.get(4).add(new GraphNode(5, 4));
+
+        // 5 -- 3 -- 1
+        adj.get(5).add(new GraphNode(3, 1));
+
+        return adj;
+    }
 }
