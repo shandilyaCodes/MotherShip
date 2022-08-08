@@ -355,4 +355,59 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/ec446f02-0952-4ad7-9688-570ca6de226d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220808%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220808T134125Z&X-Amz-Expires=86400&X-Amz-Signature=356c8238dd4cea1d346d24c01d0bd26819c60c665f0b27de936b3636f8797b46&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeUnitWeightGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i < 9; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(1);
+        adj.get(1).add(0);
+
+        // 0 -- 3
+        adj.get(0).add(3);
+        adj.get(3).add(0);
+
+        // 1 -- 3
+        adj.get(1).add(3);
+        adj.get(3).add(1);
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        // 4 -- 5
+        adj.get(4).add(5);
+        adj.get(5).add(4);
+
+        // 5 -- 6
+        adj.get(5).add(6);
+        adj.get(6).add(5);
+
+        // 2 -- 6
+        adj.get(2).add(6);
+        adj.get(6).add(2);
+
+        // 6 -- 7
+        adj.get(6).add(7);
+        adj.get(7).add(6);
+
+        // 6 -- 8
+        adj.get(6).add(8);
+        adj.get(8).add(6);
+
+        // 8 -- 7
+        adj.get(8).add(7);
+        adj.get(7).add(8);
+
+        return adj;
+    }
 }
