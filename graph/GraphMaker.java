@@ -443,4 +443,38 @@ public class GraphMaker {
 
         return adj;
     }
+    
+        // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9dac158b-3784-470f-bf37-3d413d797614/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220810%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220810T131557Z&X-Amz-Expires=86400&X-Amz-Signature=1a1d0a3eaedfd73dd179a801f5fd298eb2285ea5832a7d81a51a6ea7a7508c96&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<GraphNode>> makePrimsGraph() {
+        ArrayList<ArrayList<GraphNode>> adj = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(new GraphNode(1, 2));
+        adj.get(1).add(new GraphNode(0, 2));
+
+        // 1 -- 2
+        adj.get(1).add(new GraphNode(2, 3));
+        adj.get(2).add(new GraphNode(1, 3));
+
+        // 0 -- 3
+        adj.get(0).add(new GraphNode(3, 6));
+        adj.get(3).add(new GraphNode(0, 6));
+
+        // 3 -- 1
+        adj.get(3).add(new GraphNode(1, 8));
+        adj.get(1).add(new GraphNode(3, 8));
+
+        // 1 -- 4
+        adj.get(1).add(new GraphNode(4, 5));
+        adj.get(4).add(new GraphNode(1, 5));
+
+        // 4 -- 2
+        adj.get(4).add(new GraphNode(2, 7));
+        adj.get(2).add(new GraphNode(4, 7));
+
+        return adj;
+    }
 }
