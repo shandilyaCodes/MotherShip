@@ -477,4 +477,45 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e27ca7cb-4f4f-4594-8fe3-5503fc006b90/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220815%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220815T180248Z&X-Amz-Expires=86400&X-Amz-Signature=f88a7c2e68ba8685a18007857459de07dcb059e6324f9eb5566d0e8390eb9fa5&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeSccGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i < 7; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(1);
+
+        // 1 -- 2
+        adj.get(1).add(2);
+
+        // 1 -- 3
+        adj.get(1).add(3);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+
+        // 4 -- 0
+        adj.get(4).add(0);
+
+        // 4 -- 5
+        adj.get(4).add(5);
+
+        // 5 -- 2
+        adj.get(5).add(2);
+
+        // 4 -- 6
+        adj.get(4).add(6);
+
+        // 5 -- 6
+        adj.get(5).add(6);
+
+        // 6 -- 5
+        adj.get(6).add(5);
+
+        return adj;
+    }
 }
