@@ -518,4 +518,34 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/10cc853a-3f2c-4578-9ce9-10843c0ae109/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220816%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220816T184817Z&X-Amz-Expires=86400&X-Amz-Signature=5ce559a486fd453b56060debec67527b1d1b58957b4c2b491ce1006c2619f66d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeBridgeGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(1);
+        adj.get(1).add(0);
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 0
+        adj.get(2).add(0);
+        adj.get(0).add(2);
+
+        // 0 -- 3
+        adj.get(0).add(3);
+        adj.get(3).add(0);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        return adj;
+    }
 }
