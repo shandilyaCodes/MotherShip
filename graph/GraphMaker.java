@@ -548,4 +548,38 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    // URL https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c8d0b038-cef8-44f6-b637-04d45c629ecb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220817%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220817T111657Z&X-Amz-Expires=86400&X-Amz-Signature=d5c0ae9b84d945f3df9ae07884227f0dd96debcfa4ad226887a6ef2089246722&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject
+    public static ArrayList<ArrayList<Integer>> makeAPGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(1);
+        adj.get(1).add(0);
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 0
+        adj.get(2).add(0);
+        adj.get(0).add(2);
+
+        // 0 -- 3
+        adj.get(0).add(3);
+        adj.get(3).add(0);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        // 3 -- 5
+        adj.get(3).add(5);
+        adj.get(5).add(3);
+
+        return adj;
+    }
 }
