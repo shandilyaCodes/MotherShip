@@ -582,4 +582,80 @@ public class GraphMaker {
 
         return adj;
     }
+    
+    public static ArrayList<ArrayList<Integer>> makeEulerGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(1);
+        adj.get(1).add(0);
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 0
+        adj.get(2).add(0);
+        adj.get(0).add(2);
+
+        return adj;
+    }
+
+    public static ArrayList<ArrayList<Integer>> makeSemiEulerGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 0 -- 1
+        adj.get(0).add(1);
+        adj.get(1).add(0);
+
+        // 1 --2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 3
+        adj.get(2).add(3);
+        adj.get(3).add(2);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+
+        // 4 -- 2
+        adj.get(4).add(2);
+        adj.get(2).add(4);
+
+        return adj;
+    }
+
+    public static ArrayList<ArrayList<Integer>> makeNonEulerGraph() {
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // 1 -- 0
+        adj.get(1).add(0);
+        adj.get(0).add(1);
+
+        // 1 -- 2
+        adj.get(1).add(2);
+        adj.get(2).add(1);
+
+        // 2 -- 0
+        adj.get(2).add(0);
+        adj.get(0).add(2);
+
+        // 3 -- 4
+        adj.get(3).add(4);
+        adj.get(4).add(3);
+        
+        return adj;
+    }
 }
