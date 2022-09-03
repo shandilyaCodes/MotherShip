@@ -12,6 +12,7 @@ public class BinarySearch {
         System.out.println(index);
     }
 
+    // Recursive approach
     private static int findTarget(int[] nums, int target, int low, int high) {
         while(low <= high) {
             int mid = (low + high)/2;
@@ -27,5 +28,23 @@ public class BinarySearch {
             }
         }
         return low;
+    }
+    
+    // Iterative approach
+    private static findIterative(int[] nums, int target) {
+        int left = 0, right = nums.length-1, pivot = 0;
+        
+        while(left <= right) {
+            pivot = left + (right-left)/2;
+            
+            if(nums[pivot] == target)
+                return pivot;
+            if(nums[pivot] < target) {
+                left = ++pivot;       
+            } else {
+                right = --pivot;
+            }
+        }
+        return left;
     }
 }
