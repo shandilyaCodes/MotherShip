@@ -8,6 +8,15 @@ public class TrieImpl {
         root = new TrieNode();
     }
 
+    /*
+    * O(length of the word) is the time complexity of insertion
+    * Steps
+    * Have a dummy node to track the node in consideration and init that with root node
+    * For all the characters in the word, check if the character is present in the current node
+    * If the character is present in the current node move to the next node, if not put the character
+    * in the node at index i
+    * Once all the characters in the word are analysed, in the end set the end for the node by setting it's end of word as true
+     */
     public void insert(String word) {
         TrieNode node = root;
         for (int i = 0; i < word.length(); i++) {
