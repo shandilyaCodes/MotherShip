@@ -46,6 +46,8 @@ public class DetectCycleInUndirectedGraphBFS {
                     queue.add(new Node(it, cur));
                     vis[it] = true;
                 } else if (parent != it){
+                    // If the node it is already visited however the parent isn't it's parent, meaning it's not coming from the parent to the node it
+                    // It means it must have been visited earlier via some other path during some other exploration, thus there is a cycle present
                     return true;
                 }
             }
